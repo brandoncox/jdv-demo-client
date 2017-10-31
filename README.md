@@ -1,5 +1,5 @@
 # jdv-demo-client 
-Client to view jdv-demo api data
+Client to view [jdv-demo](https://github.com/mechevarria/jdv-demo) api data
 
 1. [Run Local](#local)
 2. [Run on OpenShift](#openshift)
