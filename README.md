@@ -55,7 +55,7 @@ For local development you can use [MiniShift](https://docs.openshift.org/latest/
 ### Create the New Application
 
 Select `Add to Project -> Catalog -> JavaScript -> Node.js`.  Make sure the version is **6**
-* Name **jdv-demo-client-seed**
+* Name **jdv-demo-client**
 * Git Repository URL **https://github.com/mechevarria/jdv-demo-client**
 * Click create
 
