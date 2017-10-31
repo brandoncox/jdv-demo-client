@@ -1,0 +1,15 @@
+<div class="card-pf card-pf-accented">
+    <div class="card-pf-heading">
+        <h4 class="card-pf-title">
+            {{$ctrl.name}}
+            <span class="pull-right"><button class="btn btn-primary" ng-click="$ctrl.reload()"><i class="fa fa-refresh"></i>&nbsp; Reload</button></span>
+        </h4>
+    </div>
+    <div class="card-pf-body">
+        <pf-table-view items="$ctrl.items"
+                       columns="$ctrl.columns"
+                       config="$ctrl.config"
+                       page-config="$ctrl.pageConfig">
+        </pf-table-view>
+    </div>
+</div>
