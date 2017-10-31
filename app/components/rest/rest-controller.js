@@ -11,22 +11,21 @@
 
         $ctrl.name = 'REST Data';
 
-        $ctrl.items = [];
-
         $ctrl.reload = function () {
+            $ctrl.items = [];
             RestSrvc.get()
                 .then(function (resp) {
                     $ctrl.items = resp.data.value;
                     NotifySrvc.success('Successfully loaded REST data');
                 })
                 .catch(function (err) {
-                    NotifySrvc.error(err.status + ', ' + err.statusText);
+                    NotifySrvc.error(err);
                 });
         };
 
         $ctrl.$onInit = function() {
             $ctrl.reload();
-        }
+        };
 
         $ctrl.pageConfig = {
             pageNumber: 1,

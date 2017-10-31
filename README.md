@@ -1,5 +1,5 @@
-# patternfly-seed 
-Patternfly Angular Seed project.  This project provides the infrastructure for development, livereload, code validation and production optimizations for deployment.
+# jdv-demo-client 
+Client to view jdv-demo api data
 
 1. [Run Local](#local)
 2. [Run on OpenShift](#openshift)
@@ -55,8 +55,8 @@ For local development you can use [MiniShift](https://docs.openshift.org/latest/
 ### Create the New Application
 
 Select `Add to Project -> Catalog -> JavaScript -> Node.js`.  Make sure the version is **6**
-* Name **patternfly-seed**
-* Git Repository URL **https://github.com/mechevarria/patternfly-seed**
+* Name **jdv-demo-client-seed**
+* Git Repository URL **https://github.com/mechevarria/jdv-demo-client**
 * Click create
 
 The default build will run a `npm install` command and then `npm run start`.  To run in development mode change the environment variable **NPM_RUN** to **dev**

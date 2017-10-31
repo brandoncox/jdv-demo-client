@@ -10,22 +10,22 @@
         var $ctrl = this;
 
         $ctrl.name = 'Federated Data';
-        $ctrl.items = [];
 
         $ctrl.reload = function () {
+            $ctrl.items = [];
             FedSrvc.get()
                 .then(function (resp) {
                     $ctrl.items = resp.data.value;
                     NotifySrvc.success('Successfully loaded federated data');
                 })
                 .catch(function (err) {
-                    NotifySrvc.error(err.status + ', ' + err.statusText);
+                    NotifySrvc.error(err);
                 });
         };
 
         $ctrl.$onInit = function() {
             $ctrl.reload();
-        }
+        };
 
         $ctrl.pageConfig = {
             pageNumber: 1,
@@ -45,7 +45,7 @@
                     return $filter('currency')(value)
                 }
             },
-            {header: 'Last Update', itemField: 'lastupdatedate'},
+            {header: 'Updated', itemField: 'lastupdatedate'},
             {header: 'Name', itemField: 'name'},
             {header: 'Website', itemField: 'website'},
             {header: 'Phone', itemField: 'phone'},

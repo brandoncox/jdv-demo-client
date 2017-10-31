@@ -4,9 +4,9 @@
     angular.module('patternfly.app')
         .controller('NavCtrl', Controller);
 
-    Controller.$inject = ['$rootScope', 'NotifySrvc'];
+    Controller.$inject = ['$rootScope', 'NotifySrvc', 'ApiHeaderSrvc'];
 
-    function Controller($rootScope, NotifySrvc) {
+    function Controller($rootScope, NotifySrvc, ApiHeaderSrvc) {
         var $ctrl = this;
 
         $ctrl.navItems = [{
@@ -57,6 +57,18 @@
             $ctrl.menuItems = NotifySrvc.notifications;
             $ctrl.notifyCount = $ctrl.menuItems.length;
         }
+
+        $ctrl.handleClose = function (data) {
+            NotifySrvc.close(data);
+        };
+
+        // user dropdown menu
+        $ctrl.credentials = ApiHeaderSrvc.getCredentials();
+
+        $ctrl.changeUser = function(index) {
+          ApiHeaderSrvc.selectUser(index);
+          NotifySrvc.info('Changed user to ' + $ctrl.credentials[index].username);
+        };
 
     }
 })();

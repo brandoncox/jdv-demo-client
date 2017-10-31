@@ -10,22 +10,22 @@
         var $ctrl = this;
         $ctrl.name = 'Excel Data';
 
-        $ctrl.items = [];
-
         $ctrl.reload = function () {
+            $ctrl.items = [];
+
             ExcelSrvc.get()
                 .then(function (resp) {
                     $ctrl.items = resp.data.value;
                     NotifySrvc.success('Successfully loaded excel data');
                 })
                 .catch(function (err) {
-                    NotifySrvc.error(err.status + ', ' + err.statusText);
+                    NotifySrvc.error(err);
                 });
         };
 
         $ctrl.$onInit = function() {
             $ctrl.reload();
-        }
+        };
 
         $ctrl.pageConfig = {
             pageNumber: 1,
